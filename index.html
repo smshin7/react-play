@@ -17,12 +17,20 @@
     var ScottsComponent = React.createClass({
       render: function() {
         return(
-          <h2>My name is Scott</h2>
+          <h2>{this.props.user} likes to eat {this.props.food}</h2>
         );
       }
     });
 
-    React.render(<ScottsComponent />, document.getElementById('content'));
+    React.render(
+      <div>
+        <ScottsComponent user= "Scott" food="Chicken"/>
+        <ScottsComponent user= "David" food="Pizza"/>
+        <ScottsComponent user= "Dinesh" food="Noodles"/>
+        <ScottsComponent user= "Christine" food="Sandwiches"/>
+      </div>, 
+      document.getElementById('content')
+    );
   </script>
 
 </body>
